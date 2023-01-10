@@ -36,5 +36,5 @@ jobs:
     needs: dockerize
     steps:
       - name: deploy telegram bot
-        run: cd ../../../.. && docker rm --force /test-bot && docker image prune -a && docker pull shukhratutaboev/test-bot:latest && docker compose build --no-cache test-bot && docker-compose up -d --no-deps test-bot
+        run: cd ../../../.. && docker rm --force /test-bot && docker image prune -a && docker pull shukhratutaboev/test-bot:latest && docker compose build --no-cache test-bot && docker compose up -d --no-deps test-bot
       
