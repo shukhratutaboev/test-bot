@@ -13,4 +13,4 @@ FROM mcr.microsoft.com/dotnet/aspnet:6.0
 WORKDIR /app
 COPY --from=build /app .
 # For Heroku
-CMD ASPNETCORE_URLS="http://+:80;" dotnet TestBot.dll
+CMD cp /root/.microsoft/usersecrets/secrets.json /app/appsettings.json && ASPNETCORE_URLS="http://+:80;" dotnet TestBot.dll
