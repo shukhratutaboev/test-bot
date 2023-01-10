@@ -36,5 +36,5 @@ jobs:
     needs: dockerize
     steps:
       - name: deploy telegram bot
-      - run: cs ../../../.. && mkdir salom-test
+        run: cs ../../../.. && mkdir salom-test
       
