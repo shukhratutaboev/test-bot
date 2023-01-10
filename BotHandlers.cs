@@ -49,7 +49,7 @@ public class BotHandlers
     {
         await client.SendTextMessageAsync(
             message.Chat.Id,
-            "Success"
+            "Success, result"
         );
     }
 }
