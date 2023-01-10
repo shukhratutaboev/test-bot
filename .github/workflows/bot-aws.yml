@@ -32,7 +32,7 @@ jobs:
           no-cache: true
 
   deploy:    
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     needs: dockerize
     steps:
       - name: deploy telegram bot
