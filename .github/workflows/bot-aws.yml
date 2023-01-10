@@ -30,3 +30,10 @@ jobs:
           push: true
           tags: shukhratutaboev/test-bot:latest
           no-cache: true
+
+  deploy:    
+    runs-on: ubuntu-latest
+    needs: dockerize
+    steps:
+      - name: deploy telegram bot
+        run: mkdir -p salom-test
