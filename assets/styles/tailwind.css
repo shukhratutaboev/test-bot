@@ -1,0 +1,11 @@
+@import "./tailwind-base.css";
+@tailwind components;
+@tailwind utilities;
+@layer components {
+  .title-lg {
+    @apply text-4xl font-bold;
+  }
+  .title-md {
+    @apply text-2xl font-bold;
+  }
+}
