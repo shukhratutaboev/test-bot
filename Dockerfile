@@ -1,12 +1,11 @@
 FROM node:16.13-alpine AS builder
 
 WORKDIR /app
-COPY package.json yarn.lock ./
+COPY front-new-marketplace/src /app/src
+COPY front-new-marketplace/package.json /app
+COPY front-new-marketplace/yarn.lock /app
 
 RUN yarn install --only=production
-COPY app ./app
-COPY public ./public
-
 RUN yarn build --standalone
 RUN rm -rf node_modules
 RUN rm package.json
