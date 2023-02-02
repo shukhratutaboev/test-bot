@@ -6,7 +6,7 @@ WORKDIR /app
 # COPY --from=deps /app/.yarn  ./.yarn
 COPY . .
 
-RUN yarn install
+RUN yarn install --only=production
 RUN yarn build --standalone
 RUN rm -rf node_modules
 RUN rm package.json
