@@ -4,8 +4,8 @@ WORKDIR /app
 # COPY --from=deps /app/.yarn  ./.yarn
 COPY . .
 
-RUN yarn install --immutable
-RUN yarn build
+RUN yarn install --production
+RUN yarn build --standalone
 
 
 # just comment
