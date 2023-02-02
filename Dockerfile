@@ -1,17 +1,15 @@
 FROM node:16.13-alpine AS builder
 
-ENV NUXT_VERSION=3.0.0
-
 WORKDIR /app
-# COPY --from=deps /app/.yarn  ./.yarn
-COPY . .
+COPY package.json yarn.lock ./
 
 RUN yarn install --only=production
+COPY src ./src
+COPY public ./public
+
 RUN yarn build --standalone
 RUN rm -rf node_modules
 RUN rm package.json
 RUN yarn cache clean
 
-
-# just comment
 CMD ["node", ".output/server/index.mjs"]
