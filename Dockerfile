@@ -10,9 +10,8 @@ RUN yarn install
 RUN yarn build --standalone
 RUN rm -rf node_modules
 RUN rm package.json
-RUN yarn add "nuxt-start@${NUXT_VERSION}"
 RUN yarn cache clean
 
 
 # just comment
-ENTRYPOINT ["npx", "nuxt-start"]
+CMD ["node", ".output/server/index.mjs"]
