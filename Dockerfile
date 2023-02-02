@@ -4,7 +4,7 @@ WORKDIR /app
 COPY package.json yarn.lock ./
 
 RUN yarn install --only=production
-COPY src ./src
+COPY app ./app
 COPY public ./public
 
 RUN yarn build --standalone
