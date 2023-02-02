@@ -4,7 +4,7 @@ WORKDIR /app
 # COPY --from=deps /app/.yarn  ./.yarn
 COPY . .
 
-RUN yarn install --production
+RUN yarn install
 RUN yarn build --standalone
 
 
